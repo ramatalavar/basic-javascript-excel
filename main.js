@@ -205,9 +205,21 @@ var prepareExcel = (function() {
     })();
   }
 
+  function destroy() {
+    var buttons = [].slice.call(document.getElementsByTagName('button'));
+    buttons.forEach((button) => {
+      button.removeEventListener("click", function(ev) {
+        // do some thing when event listeners removed
+      });
+    });
+  }
+
   return {
-    init
+    init,
+    destroy
   };
 })();
-
+// init the excel and attach events
 document.body.addEventListener('onload', prepareExcel.init());
+//turn off the events
+document.body.addEventListener('onbeforeunload', prepareExcel.destroy());
