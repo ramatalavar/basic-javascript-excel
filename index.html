@@ -31,6 +31,27 @@
       .actions {
         padding: 10px 5px;
       }
+
+      .header.asc::after, .header.dsc::before {
+        content: " ";
+        width: 7px;
+        height: 7px;
+        border: 2px solid #333;
+        border-bottom: 2px transparent;
+        border-left: 2px transparent;
+        float: right;
+        margin-right: 10px;
+      }
+
+      .header.asc::after {
+        transform: rotate(-45deg);
+        margin-top: 7px;
+      }
+
+      .header.dsc::before {
+        transform: rotate(-225deg);
+        margin-top: 2px;
+      }
     </style>
   </head>
   <body>
@@ -42,11 +63,13 @@
           <button type="button" id="delete-row" name="delete-row">Delete Row</button>
           <button type="button" id="add-col" name="add-col">Add Col</button>
           <button type="button" id="delete-col" name="delete-col">Delete Col</button>
-          <button type="button" id="sort-asc" name="sort-rows">Sort Asc</button>
-          <button type="button" id="sort-dsc" name="sort-rows">Sort Dsc</button>
         </div>
       </caption>
     </table>
+    <br>
+    <div class="">
+      *** click on individual columns to sort
+    </div>
     <script src="./main.js" type="text/javascript"></script>
   </body>
 </html>
